@@ -39,15 +39,11 @@ public class Spaen_Jugador : MonoBehaviour
 
     void SpawnCharacter(Vector3 spawnPosition)
     {
-        GameObject newCharacter = Instantiate(player, spawnPosition, Quaternion.identity);
+        GameObject newCharacter = Instantiate(player, spawnPosition, player.transform.rotation);
 
-        Collider col = newCharacter.GetComponent<Collider>();
-        if (col != null)
-        {
-            Vector3 adjustedPosition = spawnPosition;
-            adjustedPosition.y += col.bounds.extents.y;
-            newCharacter.transform.position = adjustedPosition;
-        }
+
+        newCharacter.transform.position = spawnPosition;
+
 
         characterSpawned?.Invoke(newCharacter);
     }

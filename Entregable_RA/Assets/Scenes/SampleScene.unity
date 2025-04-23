@@ -550,10 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537fd1e7d3bab06459937e8e1b615b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrivingSurfaceManager: {fileID: 1923698790}
   enemyPrefab: {fileID: 7859801863091602742, guid: e019ced96dad84543aa961c643ea59b9,
     type: 3}
-  spawnInterval: 5
+  spawnInterval: 4
+  planeManager: {fileID: 1923698786}
 --- !u!4 &1273151118
 Transform:
   m_ObjectHideFlags: 0
@@ -764,6 +764,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1923698786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2512387470528047737, guid: 48cb3fb68c91eb94999fd99957eb0cae,
+    type: 3}
+  m_PrefabInstance: {fileID: 331264285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923698784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1923698790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca53c0d6341c1c245b000dff44e546f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaneManager: {fileID: 0}
+  PlaneManager: {fileID: 1923698786}
   RaycastManager: {fileID: 1923698785}
   LockedPlane: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
