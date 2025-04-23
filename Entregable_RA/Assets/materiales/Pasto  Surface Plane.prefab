@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2080369339933002897}
   - component: {fileID: 2080369339933002898}
   - component: {fileID: 2080369339933002899}
-  - component: {fileID: 407567435925043997}
+  - component: {fileID: -7040949691613937699}
   m_Layer: 0
-  m_Name: Driving Surface Plane
+  m_Name: Pasto  Surface Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba0efcfa8bc6643cc97d52ce4f48acde, type: 2}
+  - {fileID: 2100000, guid: f6f985716a1f33649828bcf3b586549c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &407567435925043997
+--- !u!114 &-7040949691613937699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2080369339933002901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cea7bb2a5a5416b9b8b4e44da83e8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f9f90b7c1dc214e9adedc2aeae1d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FeatheringWidth: 0.1
