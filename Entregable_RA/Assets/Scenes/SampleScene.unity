@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b53a7ec6893e94b9a2673c7af2c851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1832719282514519169, guid: a54ab866321c65741b5d96904053c70c, type: 3}
+  player: {fileID: 5328590673281674572, guid: a5f6a6b3ec87def489b781ee5b9a0150, type: 3}
+  raycastManager: {fileID: 1923698785}
 --- !u!1001 &331264285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537fd1e7d3bab06459937e8e1b615b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7859801863091602742, guid: e019ced96dad84543aa961c643ea59b9,
+  enemyPrefab: {fileID: 1675085382328341819, guid: afd3a3c023dd3db4b8ce5463a0db9e6a,
     type: 3}
   spawnInterval: 4
   planeManager: {fileID: 1923698786}

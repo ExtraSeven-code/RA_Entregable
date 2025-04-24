@@ -5,24 +5,20 @@ using UnityEngine.XR.ARFoundation;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;      // Prefab del enemigo
-    [SerializeField] private float spawnInterval = 2f;    // Intervalo entre cada spawn (en segundos)
-    [SerializeField] private ARPlaneManager planeManager;  // ARPlaneManager para obtener los planos
+    [SerializeField] private GameObject enemyPrefab;      
+    [SerializeField] private float spawnInterval = 2f;    
+    [SerializeField] private ARPlaneManager planeManager;  
 
-    private bool isSpawning = true;  // Bandera para controlar el spawn
-
+    private bool isSpawning = true;  
     void Start()
     {
-        // Llama al método para empezar a spawnear enemigos
         StartCoroutine(SpawnEnemiesRoutine());
     }
 
-    // Coroutine para spawnear enemigos de forma continua
     IEnumerator SpawnEnemiesRoutine()
     {
         while (isSpawning)
         {
-            // Esperar el intervalo de tiempo antes de spawnear el siguiente enemigo
             yield return new WaitForSeconds(spawnInterval);
 
             // Solo spawn si hay planos disponibles
@@ -38,7 +34,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    // Función para obtener un plano aleatorio de los planos detectados
     ARPlane GetRandomPlane()
     {
         int index = Random.Range(0, planeManager.trackables.count);
@@ -52,7 +47,6 @@ public class EnemySpawner : MonoBehaviour
         return null;
     }
 
-    // Función para obtener una posición aleatoria en el plano seleccionado
     Vector3 GetRandomPositionOnPlane(ARPlane plane)
     {
         var mesh = plane.GetComponent<ARPlaneMeshVisualizer>().mesh;
@@ -72,7 +66,6 @@ public class EnemySpawner : MonoBehaviour
         return plane.transform.TransformPoint(point);
     }
 
-    // Genera un punto aleatorio dentro de un triángulo (para la geometría del plano)
     Vector3 RandomInTriangle(Vector3 v1, Vector3 v2)
     {
         float u = Random.Range(0f, 1f);
@@ -86,7 +79,6 @@ public class EnemySpawner : MonoBehaviour
         return (v1 * u) + (v2 * v);
     }
 
-    // Método para spawnear el enemigo en la posición especificada
     void SpawnEnemy(Vector3 spawnPosition)
     {
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
@@ -94,7 +86,6 @@ public class EnemySpawner : MonoBehaviour
         Collider col = newEnemy.GetComponent<Collider>();
         if (col != null)
         {
-            // Ajusta la posición del enemigo para que no se quede bajo el plano
             Vector3 adjustedPosition = spawnPosition;
             adjustedPosition.y += col.bounds.extents.y;
             newEnemy.transform.position = adjustedPosition;
