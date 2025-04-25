@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class vida_enemigo : MonoBehaviour
 {
-    private int vida = 5;
+    private int vida;
     private int puntos = 1;
+    [SerializeField]private TextMeshProUGUI lavida_enemigo;
 
     void Start()
     {
+
         vida = EnemigoManager.instancia.vidaActual;
+    }
+    private void Update()
+    {
+        lavida_enemigo.text = vida.ToString();
     }
 
     public void RecibirDaño(int daño)
