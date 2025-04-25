@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 39496893}
   - component: {fileID: 39496894}
   m_Layer: 0
-  m_Name: Spawner Player
+  m_Name: Gamecontroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   raycastManager: {fileID: 1923698785}
   Interfaz: {fileID: 807537081}
   spawn_enemigos: {fileID: 1273151116}
+  vida_enemigos: {fileID: 1255441631}
 --- !u!1 &217194966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1103,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204856052}
   m_CullTransparentMesh: 1
+--- !u!1 &1255441631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255441633}
+  - component: {fileID: 1255441632}
+  m_Layer: 0
+  m_Name: Enemigomanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1255441632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255441631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe94e6471a678644f868a2116cd67486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaActual: 5
+  tiempoAumento: 30
+  incrementoVida: 2
+--- !u!4 &1255441633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255441631}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1266551395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,8 +1227,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1675085382328341819, guid: afd3a3c023dd3db4b8ce5463a0db9e6a,
     type: 3}
-  spawnInterval: 2
+  spawnInterval: 5
   planeManager: {fileID: 1923698786}
+  enemigosPorPlano: 1
+  incrementoPorOleada: 2
+  maxEnemigosPorPlano: 40
+  tiempoAumentarCantidad: 30
 --- !u!4 &1273151118
 Transform:
   m_ObjectHideFlags: 0
@@ -1467,7 +1519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Puntos
+  m_text: 'Puntos: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2310,3 +2362,4 @@ SceneRoots:
   - {fileID: 807537082}
   - {fileID: 1452545957}
   - {fileID: 1152836334}
+  - {fileID: 1255441633}

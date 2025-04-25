@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 4
   "da\xF1o": 5
-  tiempoDeVida: 5
+  tiempoDeVida: 3
 --- !u!1001 &6841173093347530997
 PrefabInstance:
   m_ObjectHideFlags: 0

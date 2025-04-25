@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class vida_enemigo : MonoBehaviour
 {
-    public int vida = 5;
+    private int vida = 5;
     private int puntos = 1;
+
+    void Start()
+    {
+        vida = EnemigoManager.instancia.vidaActual;
+    }
 
     public void RecibirDaño(int daño)
     {
         vida -= daño;
+
         if (vida <= 0)
         {
             morir();

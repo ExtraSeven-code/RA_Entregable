@@ -6,13 +6,18 @@ using UnityEngine.XR.ARFoundation;
 public class Spawner_Enemigo : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;      
-    [SerializeField] private float spawnInterval = 2f;    
-    [SerializeField] private ARPlaneManager planeManager;  
+    [SerializeField] private float spawnInterval;    
+    [SerializeField] private ARPlaneManager planeManager;
+    [SerializeField] private int enemigosPorPlano;
+    [SerializeField] private int incrementoPorOleada;
+    [SerializeField] private int maxEnemigosPorPlano;
+    [SerializeField] private float tiempoAumentarCantidad;
 
     private bool isSpawning = true;  
     void Start()
     {
         StartCoroutine(SpawnEnemiesRoutine());
+        StartCoroutine(AumentarCantidadEnemigos());
     }
 
     IEnumerator SpawnEnemiesRoutine()
@@ -21,14 +26,18 @@ public class Spawner_Enemigo : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnInterval);
 
-            // Solo spawn si hay planos disponibles
             if (planeManager.trackables.count > 0)
             {
-                ARPlane plane = GetRandomPlane();
-                if (plane != null)
+                foreach (var plane in planeManager.trackables)
                 {
-                    Vector3 spawnPosition = GetRandomPositionOnPlane(plane);
-                    SpawnEnemy(spawnPosition);
+                    int enemigosAProducir = 1 + Mathf.FloorToInt(Time.time / tiempoAumentarCantidad);
+                    enemigosAProducir = Mathf.Min(maxEnemigosPorPlano, enemigosAProducir);
+
+                    for (int i = 0; i < enemigosAProducir; i++)
+                    {
+                        Vector3 spawnPosition = GetRandomPositionOnPlane(plane);
+                        SpawnEnemy(spawnPosition);
+                    }
                 }
             }
         }
@@ -89,6 +98,15 @@ public class Spawner_Enemigo : MonoBehaviour
             Vector3 adjustedPosition = spawnPosition;
             adjustedPosition.y += col.bounds.extents.y;
             newEnemy.transform.position = adjustedPosition;
+        }
+    }
+    IEnumerator AumentarCantidadEnemigos()
+    {
+        while (isSpawning)
+        {
+            yield return new WaitForSeconds(tiempoAumentarCantidad);
+            enemigosPorPlano = Mathf.Min(maxEnemigosPorPlano, enemigosPorPlano + incrementoPorOleada);
+            Debug.Log("Ahora aparecen " + enemigosPorPlano + " enemigos por plano.");
         }
     }
 }
