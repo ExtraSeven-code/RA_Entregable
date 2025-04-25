@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4602411066101244480}
   - component: {fileID: 7754698645727699657}
   - component: {fileID: 4698946246039761010}
+  - component: {fileID: 7754192717579013105}
   m_Layer: 0
   m_Name: rifle
   m_TagString: Torreta
@@ -28,10 +29,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9481718, y: 0.91708994, z: 1.275245}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7807095788532355999}
+  - {fileID: 1917535264578967565}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7754698645727699657
@@ -82,6 +84,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.15, z: 0.17045757}
   m_Center: {x: 0, y: 0, z: 0.014771208}
+--- !u!114 &7754192717579013105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2401950655410225175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a7f6236f8e32e4f931e681515dd33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangoDeteccion: 10
+  puntoDisparo: {fileID: 1917535264578967565}
+  balaPrefab: {fileID: 3159495421329882837, guid: bc3f78f1701758346a818aa5d1deada3,
+    type: 3}
+  cargadorMaximo: 1
+  tiempoEntreDisparos: 0.2
+  tiempoRecarga: 3
+--- !u!1 &3761309738620159192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917535264578967565}
+  m_Layer: 0
+  m_Name: punto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917535264578967565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761309738620159192}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00003248453, y: -0.06, z: 0.2075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4602411066101244480}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7769511163122300020
 PrefabInstance:
   m_ObjectHideFlags: 0

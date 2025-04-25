@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4645567006577554302}
   - component: {fileID: 325511564806716714}
   - component: {fileID: 2601826672142500844}
-  - component: {fileID: -963426439349344763}
+  - component: {fileID: 7844744095045810077}
   m_Layer: 0
   m_Name: metralleta
   m_TagString: Torreta
@@ -29,10 +29,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1.0001, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9161646370533758915}
+  - {fileID: 7635669457958356458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &325511564806716714
@@ -83,7 +84,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-963426439349344763
+--- !u!114 &7844744095045810077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,19 +93,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 2183044074487667980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b309761041ee54265b7f9a8c0f373dab, type: 3}
+  m_Script: {fileID: 11500000, guid: 39a7f6236f8e32e4f931e681515dd33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectPlaneTranslationMode: 2
-  m_EnablePlaneClassificationFilter: 0
-  m_PlaneClassificationsList: 
-  m_UseInteractorOrientation: 0
-  m_MinScale: 0.25
-  m_MaxScale: 2
-  m_ScaleSensitivity: 0.75
-  m_Elasticity: 0.15
-  m_EnableElasticBreakLimit: 0
-  m_ElasticBreakLimit: 0.5
+  rangoDeteccion: 5
+  puntoDisparo: {fileID: 7635669457958356458}
+  balaPrefab: {fileID: 90380805768552240, guid: b45e2e899fca9b04598b1d15b34685e8,
+    type: 3}
+  cargadorMaximo: 3
+  tiempoEntreDisparos: 0.5
+  tiempoRecarga: 1
+--- !u!1 &7092578896977810604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7635669457958356458}
+  m_Layer: 0
+  m_Name: punto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7635669457958356458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7092578896977810604}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0013, y: -0.18, z: 0.1314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4645567006577554302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8695902946238672936
 PrefabInstance:
   m_ObjectHideFlags: 0
