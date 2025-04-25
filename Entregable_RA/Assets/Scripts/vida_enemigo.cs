@@ -20,4 +20,11 @@ public class vida_enemigo : MonoBehaviour
         puntosManager.instancia.SumarPuntos(puntos);
         Destroy(gameObject);
     }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
