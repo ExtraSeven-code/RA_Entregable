@@ -8,6 +8,8 @@ public class Spaen_Jugador : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private ARRaycastManager raycastManager;
+    [SerializeField] private GameObject Interfaz;
+    [SerializeField] private GameObject spawn_enemigos;
 
     private bool hasSpawned = false;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -24,8 +26,9 @@ public class Spaen_Jugador : MonoBehaviour
 
                 GameObject newPlayer = Instantiate(player, hitPose.position, hitPose.rotation);
 
-                // Corregir altura si tiene collider
                 Collider col = newPlayer.GetComponent<Collider>();
+                Interfaz.SetActive(true);
+                spawn_enemigos.SetActive(true);
                 if (col != null)
                 {
                     Vector3 pos = newPlayer.transform.position;
