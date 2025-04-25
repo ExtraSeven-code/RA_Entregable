@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -963426439349344763}
   m_Layer: 0
   m_Name: metralleta
-  m_TagString: Untagged
+  m_TagString: Torreta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
