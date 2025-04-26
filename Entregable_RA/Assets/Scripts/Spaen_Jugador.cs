@@ -42,4 +42,5 @@ public class Spaen_Jugador : MonoBehaviour
             }
         }
     }
+    
 }

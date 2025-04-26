@@ -7,7 +7,8 @@ public class puntosManager : MonoBehaviour
 {
     public static puntosManager instancia;
     public int puntosTotales = 0;
-    public TextMeshProUGUI textoPuntos; 
+    public TextMeshProUGUI textoPuntos;
+    public TextMeshProUGUI puntos_totales;
 
     void Awake()
     {
@@ -27,5 +28,8 @@ public class puntosManager : MonoBehaviour
 
         if (textoPuntos != null)
             textoPuntos.text = "Puntos: " + puntosTotales;
+            puntos_totales.text = "Score: " + puntosTotales.ToString();
+
+
     }
 }
