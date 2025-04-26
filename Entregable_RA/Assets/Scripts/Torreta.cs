@@ -14,6 +14,7 @@ public class Torreta : MonoBehaviour
     private int balasRestantes;
     private bool puedeDisparar = true;
     private Transform enemigoObjetivo;
+    public animacion animar_torreta;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class Torreta : MonoBehaviour
     IEnumerator Disparar()
     {
         puedeDisparar = false;
+        animar_torreta.recibido = true;
 
         while (balasRestantes > 0)
         {
@@ -68,6 +70,7 @@ public class Torreta : MonoBehaviour
             balasRestantes--;
             yield return new WaitForSeconds(tiempoEntreDisparos);
         }
+        animar_torreta.recibido = false;
 
         yield return new WaitForSeconds(tiempoRecarga);
         balasRestantes = cargadorMaximo;
