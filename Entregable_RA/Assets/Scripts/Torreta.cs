@@ -54,7 +54,7 @@ public class Torreta : MonoBehaviour
     void GirarHaciaEnemigo()
     {
         Vector3 direccion = enemigoObjetivo.position - transform.position;
-        direccion.y = 0; // opcional, para mantener la rotación en el eje Y solamente
+        direccion.y = 0; 
         Quaternion rotacionDeseada = Quaternion.LookRotation(direccion);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, Time.deltaTime * 5f);
     }
